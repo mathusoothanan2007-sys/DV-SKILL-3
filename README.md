@@ -1,101 +1,118 @@
-Copy and paste this **directly into your `README.md` file**:
-
-````markdown
 # AAPL Stock Data Analysis
 
-## Overview
+## Project Overview
 
-This project analyzes and visualizes Apple (AAPL) stock data using Python. It includes data cleaning, price analysis, trading volume analysis, anomaly detection, and daily return analysis.
+This project performs **data cleaning, analysis, and visualization** on Apple (AAPL) stock market data using Python.
 
-## Technologies Used
+The project analyzes stock prices, trading volume, daily returns, and identifies unusual trading volume days.
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Google Colab
+##  Objectives
 
-## Dataset
+* Load and inspect the AAPL stock dataset
+* Clean and prepare the data
+* Convert dates into proper datetime format
+* Analyze Open, High, Low, Close, and Volume values
+* Calculate price difference and daily return
+* Visualize trading volume trends
+* Detect anomalous trading volume days
+* Analyze the distribution of daily returns
+* Calculate mean, variance, and standard deviation
 
-The dataset contains the following stock market information:
+##  Technologies Used
 
-- Date
-- Open
-- High
-- Low
-- Close
-- Volume
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Google Colab
+* CSV Dataset
 
-## Project Features
+##  Dataset
 
-- Load and inspect the AAPL stock dataset
-- Clean and prepare the data
-- Convert dates and numerical values into proper formats
-- Calculate price changes
-- Calculate daily returns
-- Analyze trading volume
-- Detect unusual trading-volume days
-- Visualize trading volume trends
-- Visualize daily return distribution
-- Calculate mean, variance, and standard deviation
-- Save the cleaned dataset
+The project uses an **AAPL stock dataset** containing:
 
-## Analysis
+* Date
+* Open
+* High
+* Low
+* Close
+* Volume
 
-### Price Delta
+The dataset is loaded using Pandas and cleaned before analysis.
 
-```text
-Price Delta = Close - Open
-````
+##  Data Processing
 
-### Daily Return
+The following data preparation steps are performed:
 
-```text
-Daily Return = ((Close - Open) / Open) × 100
-```
+1. Convert the `Date` column into datetime format.
+2. Convert stock price and volume columns into numeric values.
+3. Remove rows containing missing values.
+4. Sort the data based on date.
+5. Select the required columns for analysis.
 
-### Anomaly Detection
+##  Analysis Performed
 
-Unusual trading-volume days are identified using:
+### 1. Price Delta
 
-```text
-Anomaly Limit = Mean Volume + (2 × Standard Deviation)
-```
+The difference between the closing price and opening price is calculated:
 
-## Visualizations
+`Price_Delta = Close - Open`
 
-The project includes:
+### 2. Daily Return
+
+The daily return is calculated using:
+
+`Daily Return = ((Close - Open) / Open) × 100`
+
+These calculations help understand the daily movement of the stock price.
+
+### 3. Trading Volume Analysis
+
+A line chart is used to visualize the trading volume trend over time. The project also calculates the average trading volume.
+
+### 4. Anomaly Detection
+
+Unusual trading volume days are detected using:
+
+`Anomaly Limit = Mean Volume + (2 × Standard Deviation)`
+
+Days with trading volume above this limit are identified as anomalous days.
+
+### 5. Daily Return Distribution
+
+A histogram is used to visualize the distribution of daily returns. The project calculates:
+
+* Mean Return
+* Variance
+* Standard Deviation
+
+##  Visualizations
+
+The project generates:
 
 * Trading Volume Trend
-* Trading Volume with Anomalous Days
+* Trading Volume with Anomaly Limit
 * Daily Return Distribution
 
-## Project Files
+##  Output
 
-| File               | Description                   |
-| ------------------ | ----------------------------- |
-| `DV_TASK_3.ipynb`  | Jupyter/Google Colab notebook |
-| `dv_task_3.py`     | Python source code            |
-| `AAPL.csv.xls`     | Original AAPL stock dataset   |
-| `AAPL_cleaned.csv` | Cleaned dataset               |
+After cleaning and processing, the final dataset is saved as:
 
-## Output
+`AAPL_cleaned.csv`
 
-The cleaned dataset is generated and saved as:
+The cleaned dataset contains the processed stock data along with the calculated `Price_Delta` and `Daily_Return` columns.
 
-```text
-AAPL_cleaned.csv
-```
+##  How to Run
 
-## Conclusion
+1. Open the project in **Google Colab** or a Python environment.
+2. Upload the AAPL dataset.
+3. Run the Python code step by step.
+4. View the generated statistics and visualizations.
+5. The cleaned dataset will be saved as `AAPL_cleaned.csv`.
 
-This project demonstrates basic data cleaning, statistical analysis, anomaly detection, and data visualization using AAPL stock data.
-
-## Author
+##  Project Author
 
 **Mathusoothanan**
 
-```
+---
 
-This format is suitable for **GitHub README.md** and matches the work in your uploaded Python file. :contentReference[oaicite:0]{index=0}
-```
